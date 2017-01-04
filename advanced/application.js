@@ -13,6 +13,11 @@ var Application = function() {
       'click',
       this.bind_(this, this.onSampleAdTagClick_),
       false);
+  this.IGNAdTag_ = document.getElementById('IGNAdTag');
+  this.IGNAdTag_.addEventListener(
+      'click',
+      this.bind_(this, this.onIGNAdTagClick_),
+      false);
   this.console_ = document.getElementById('console');
   this.playButton_ = document.getElementById('playpause');
   this.playButton_.addEventListener(
@@ -59,6 +64,12 @@ Application.prototype.SAMPLE_AD_TAG_ = 'https://pubads.g.doubleclick.net/' +
     'unviewed_position_start=1&' +
     'cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=';
 
+Application.prototype.IGN_AD_TAG_ = 'https://pubads.g.doubleclick.net/' +
+    'gampad/ads?env=vp&gdfp_req=1&impl=s&output=xml_vast2&unviewed_position_start=1&sz=640x360&' +
+    'url=[referrer_url]&correlator=[timestamp]&vpos=preroll&vad_type=linear&min_ad_duration=10000' +
+    '&max_ad_duration=40000&iu=/5691/IGN_Video/Wikis&vid=096c9d9f95411fedbe5ef6bb5a0adba6' +
+    '&cmsid=973&ciu_szs=&cust_params=template%3Dwiki-desktop-01%26player%3Dhtml5';
+
 Application.prototype.setVideoEndedCallbackEnabled = function(enable) {
   if (enable) {
     this.videoPlayer_.registerVideoEndedCallback(this.videoEndedCallback_);
@@ -97,6 +108,10 @@ Application.prototype.bind_ = function(thisObj, fn) {
 
 Application.prototype.onSampleAdTagClick_ = function() {
   this.adTagBox_.value = this.SAMPLE_AD_TAG_;
+};
+
+Application.prototype.onIGNAdTagClick_ = function() {
+  this.adTagBox_.value = this.IGN_AD_TAG_;
 };
 
 Application.prototype.onClick_ = function() {
