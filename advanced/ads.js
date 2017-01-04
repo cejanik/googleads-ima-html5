@@ -139,7 +139,7 @@ Ads.prototype.processAdsManager_ = function(adsManager) {
       google.ima.ViewMode.NORMAL);
 
     adsManager.start();
-  }.bind(this), 2000);
+  }.bind(this), 5000);
 };
 
 Ads.prototype.onContentPauseRequested_ = function() {
