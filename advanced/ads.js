@@ -124,20 +124,20 @@ Ads.prototype.processAdsManager_ = function(adsManager) {
         this);
   }
 
-  setTimeout(function() {
-    var initWidth, initHeight;
-    if (this.application_.fullscreen) {
-      initWidth = this.application_.fullscreenWidth;
-      initHeight = this.application_.fullscreenHeight;
-    } else {
-      initWidth = this.videoPlayer_.width;
-      initHeight = this.videoPlayer_.height;
-    }
-    adsManager.init(
-      initWidth,
-      initHeight,
-      google.ima.ViewMode.NORMAL);
+  var initWidth, initHeight;
+  if (this.application_.fullscreen) {
+    initWidth = this.application_.fullscreenWidth;
+    initHeight = this.application_.fullscreenHeight;
+  } else {
+    initWidth = this.videoPlayer_.width;
+    initHeight = this.videoPlayer_.height;
+  }
+  adsManager.init(
+    initWidth,
+    initHeight,
+    google.ima.ViewMode.NORMAL);
 
+  setTimeout(function() {
     adsManager.start();
   }.bind(this), 5000);
 };

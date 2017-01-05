@@ -68,7 +68,7 @@ Application.prototype.IGN_AD_TAG_ = 'https://pubads.g.doubleclick.net/' +
     'gampad/ads?env=vp&gdfp_req=1&impl=s&output=xml_vast2&unviewed_position_start=1&sz=640x360&' +
     'url=[referrer_url]&correlator=[timestamp]&vpos=preroll&vad_type=linear&min_ad_duration=10000' +
     '&max_ad_duration=40000&iu=/5691/IGN_Video/Wikis&vid=096c9d9f95411fedbe5ef6bb5a0adba6' +
-    '&cmsid=973&ciu_szs=&cust_params=template%3Dwiki-desktop-01%26player%3Dhtml5';
+    '&cmsid=973&ciu_szs=&cust_params=template%3Dwiki-desktop-01%26player%3Dhtml5%26special%3Dvendor7';
 
 Application.prototype.setVideoEndedCallbackEnabled = function(enable) {
   if (enable) {
